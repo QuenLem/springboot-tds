@@ -21,10 +21,11 @@ public class TestVueController {
 	@GetMapping("test")
 	public String test(Model model ) {
 		model.addAttribute("message", "HEllo world!");
+		model.addAttribute("vue",vue);
 		vue.addMethod("update", "this.message='Message modifié!';");
 		vue.addMethod("testAjax","var self=this;"+ Http.post("/vue/test/ajax","{v:self.inputValue}",
 				"self.ajaxMessage=response.data;self.alertVisible=true"));
-		vue.addDataRaw("message", "Hello world!");
+		vue.addData("message", "Hello world!");
 		vue.addData("alertVisible", false);
 		vue.addData("ajaxMessage");
 		vue.addData("inputValue");
