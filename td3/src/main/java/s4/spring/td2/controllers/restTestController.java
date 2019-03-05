@@ -29,5 +29,20 @@ public class restTestController {
 	public Organization post(@RequestBody Organization orga) {
 		return repo.saveAndFlush(orga);
 	}
+	
+	@PostMapping("update")
+	@ResponseBody
+	public Organization put(@RequestBody Organization orga) {
+		return repo.saveAndFlush(orga);
+	}
+	
+	@PostMapping("delete")
+	@ResponseBody
+	public Organization DELETE(@RequestBody Organization orga) {
+		return repo.saveAndFlush(orga);
+	}
+	
+	
+	
 
 }
