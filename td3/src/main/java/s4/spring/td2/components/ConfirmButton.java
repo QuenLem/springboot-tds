@@ -9,9 +9,10 @@ public class ConfirmButton {
 	public static void main(String[] args) throws IOException {
 		VueComponent compo= new VueComponent("m-confirm-button");
 		compo.addData("dialog",false);
-		compo.setProps("title","message","validatecaption");
+		compo.setProps("title","message","cancelcaption","validatecaption");
 		compo.addProp("width", 500);
 		compo.addMethod("validation", "this.$emit('validation');this.dialog=false");
+		compo.addMethod("cancellation", "this.$emit('cancel');this.dialog=false");
 		compo.setDefaultTemplateFile();
 		compo.createFile(false);
 	}

@@ -1,6 +1,7 @@
 {{>header}}
 <m-confirm-button title="Test de dialogue"
-message ="Message de confirmation" validatecaption="Okay">
+:message ="message" validatecaption="Okay" cancelcaption="Annuler" @validation="validate">
+Clique ici ;) ;) 
 </m-confirm-button>
 
 {{>footer}}
