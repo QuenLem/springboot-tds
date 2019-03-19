@@ -1,0 +1,14 @@
+<template> <v-data-table :headers="headers" :items="desserts"
+	class="elevation-1"> <template v-slot:items="props">
+<td v-if="header in headers">{{props.item[header.value]}}</td>
+<td class="justify-center layout px-0">{{ props.item.calories }}</td>
+<v-icon small class="mr-2" @click="$emit('edititem',props.item)">
+edit </v-icon> 
+<v-icon small
+      	  @click="$emit('deleteitem',props.item)">
+delete </v-icon>
+<td class="text-xs-right">{{ props.item.fat }}</td>
+<td class="text-xs-right">{{ props.item.carbs }}</td>
+<td class="text-xs-right">{{ props.item.protein }}</td>
+<td class="text-xs-right">{{ props.item.iron }}</td>
+</template> </v-data-table> </template>

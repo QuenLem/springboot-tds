@@ -17,6 +17,8 @@ public class testCompo {
 		model.addAttribute("vue",vue);
 		vue.addData("message", "VOulez-vous afficher une alerte?");
 		vue.addMethod("validate", "alert('validation!');");
+		vue.addDataRaw("headers", "[{text:'Nom',value:'nom'}]");
+		vue.addDataRaw("items", "[{nom:'SMITH'},{nom:'DUPONT'}]");
 		return "index";
 	}
 
