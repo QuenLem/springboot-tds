@@ -17,7 +17,7 @@
     <title>Login Template for Semantic-UI</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+
       type="text/css"
     />
     <style type="text/css">
@@ -119,6 +119,22 @@
     ga("create", "UA-87734989-1", "auto");
     ga("send", "pageview");
     </script>
+    <form method="POST" action="loginPost" class="ui fluid form">
+		<fieldset>
+		<legend><b>Connection</b></legend>
+		
+		<div class="field">
+			<label for="login">Login : </label><input type="text" id="login" name="login" />
+		</div>
+		
+		<div class="field">
+			<label for="password">Password : </label><input type="password" id="password" name="password" />
+		</div>
+		
+		<input type="submit" class="ui positive button" value="Connect" name="Connect" />
+		
+		</fieldset>
+	</form>
   </body>
 
 

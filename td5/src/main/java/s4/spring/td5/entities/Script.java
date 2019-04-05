@@ -1,11 +1,17 @@
 package s4.spring.td5.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 
 @Entity
 public class Script {
@@ -16,6 +22,28 @@ public class Script {
 		private String description;
 		private String content;
 		private Date creationDate;
+		
+		@ManyToOne
+		private Category category;		
+		@ManyToOne
+		private User user;
+		@OneToMany(cascade = CascadeType.ALL, mappedBy = "script")
+		private List<History> history;
+		@ManyToOne
+		private Language language;
+		
+		
+		public int getId() {
+			return id;
+		}
+
+		public void setId(int id) {
+			this.id = id;
+		}
+		
+		public Script() {
+			history = new ArrayList<>();
+		}
 		
 		public String getTitle() {
 			return title;
@@ -41,4 +69,38 @@ public class Script {
 		public void setCreationDate(Date creationDate) {
 			this.creationDate = creationDate;
 		}
+
+		public Category getCategory() {
+			return category;
+		}
+
+		public void setCategory(Category category) {
+			this.category = category;
+		}
+
+		public User getUser() {
+			return user;
+		}
+
+		public void setUser(User user) {
+			this.user = user;
+		}
+
+		public List<History> getHistory() {
+			return history;
+		}
+
+		public void setHistory(List<History> history) {
+			this.history = history;
+		}
+
+		public Language getLanguage() {
+			return language;
+		}
+
+		public void setLanguage(Language language) {
+			this.language = language;
+		}
+
+	
 }
