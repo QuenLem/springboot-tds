@@ -150,9 +150,9 @@ public class ControlleurScript {
 			
 			model.addAttribute("categories", categories);
 			model.addAttribute("languages", languages);
-			return "script_new";
+			return "nouveau_script";
 		}
-		return "non_connected";
+		return "accueuil";
 	}
 	
 	@PostMapping("/script/submit")
@@ -163,7 +163,7 @@ public class ControlleurScript {
 			
 			return new RedirectView("../index");
 		}
-		return new RedirectView("../non_connected");
+		return new RedirectView("../accueuil");
 	}
 	
 	
@@ -172,7 +172,7 @@ public class ControlleurScript {
 	public String scriptEdit(@PathVariable("id") int id, ModelMap model) {
 		
 		if(user == null)
-			return "non_connected";
+			return "accueuil";
 		
 		Optional<Script> opt = scriptRepository.findById(id);
 		
@@ -196,7 +196,7 @@ public class ControlleurScript {
 				model.addAttribute("categories", categories);
 				model.addAttribute("languages", languages);
 				
-				return "script_edit";
+				return "edition_script";
 			}
 		}
 		
